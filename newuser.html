@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="web_css.css">
+<title>NEW USER </title>
+<style>
+p{
+margin-bottom:6px;
+}
+h1{
+margin-top: 80px;
+
+margin-right: 500px;
+}
+.check{
+color:lightcoral;
+}
+form {
+margin: 0 auto;
+width: 600px;
+}
+center{
+width:350px;
+}
+.allign-section {
+   width 50%;
+   margin-right: 30%;
+</style>
+<script>
+function FORM_VALIDATION()
+{
+var name =
+document.forms["RegForm"]["Name"];
+
+var dob =
+document.forms["RegForm"]["dob"];
+var email =
+document.forms["RegForm"]["Email"];
+var password =
+document.forms["RegForm"]["password1"];
+var password2 =
+
+document.forms["RegForm"]["password2"];
+var x =
+document.forms["RegForm"]["x"];
+if (name.value == "") {
+window.alert("Please enter your name.");
+name.focus();
+return false;
+}
+if (dob.value == "") {
+window.alert("Please enter your name.");
+name.focus();
+return false;
+}
+
+var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+if(email.value.match(mailformat))
+{
+}
+else
+{
+alert("You have entered an invalid email address!");
+email.focus();
+return false;
+}
+if (password.value == "" )
+{
+
+window.alert("Please enter your password");
+password2.focus();
+return false;
+}
+if ( password2.value =="")
+{
+window.alert("Please enter your password");
+password.focus();
+return false;
+}
+if( password.length<8 )
+{
+window.alert("Please enter the  password of required length");
+password.focus();
+return false;
+}
+	if(	password2.length<8 )
+{
+window.alert("Please enter the  password of required length");
+password2.focus();
+return false;
+}
+if(password.value!=password2.value)
+{
+alert("password must be same!");
+return false;
+
+}
+
+if(x.checked==false)
+{
+alert('Agree the terms and conditions');
+return false;
+}
+
+return true;
+}
+</script>
+</head>
+<body>
+<section class="allign-section"><br>
+<h1 style="text-align: center;">Sign Up</h1>
+<br>
+
+<form action="home.html "name="RegForm" onsubmit="return FORM_VALIDATION()">
+
+<table width="700" border="0" align="center" cellpadding="0"
+cellspacing="5">
+<tr>
+<td>Name</td>
+<td><input name="Name" type="text" size="30" required></td>
+<td></td>
+</tr>
+
+<tr>
+
+<tr>
+<td>DOB</td>
+<td><input type="date" type="number" size="30" name="dob"
+required></td>
+</tr>
+
+<tr>
+<td>Sex</td>
+<td><input type="radio" name="gender" value="male"
+required>Male<br>
+<input type="radio" name="gender"
+value="female">Female<br>
+<input type="radio" name="gender"
+value="female">Transgender<br></td>
+</tr>
+
+<td>Email</td>
+<td><input name="Email" type="email" size="30" required></td>
+<td></td>
+</tr>
+
+<tr>
+<td>Password</td>
+<td><input name="Password1" type="password" size="30"
+required></td>
+
+<td></td>
+</tr>
+
+<tr>
+<td>Re-type Password</td>
+<td><input name="Password2" type="password" size="30"
+required></td>
+<td></td>
+</tr>
+<tr>
+
+<td> <p class="check" ><input type="checkbox" name="x">
+Agree conditions </p></td>
+
+</tr>
+<tr>
+
+</table>
+<br>
+<center>
+<p>
+	<input type="submit" name="SUBMIT" />	EXISTING USER?
+<a href="login.html">Click Here!</a>
+</p>
+</center>
+
+</form>
+</section>
+</body>
+</html>

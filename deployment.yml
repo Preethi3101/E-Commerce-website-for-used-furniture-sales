@@ -1,0 +1,16 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: comic
+  name: comic-deployment
+  namespace: comic
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: comic
+  template:
+    metadata:
+      labels:
+        app: comic

@@ -1,0 +1,61 @@
+body {
+  margin: 0;
+  background-image: url('C:/Harini/SEM 5/FSD/Website/background.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  font-family: cursive;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(152, 186, 189);
+    font-family: cursive;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: rgb(5, 5, 5);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+ 
+  li a:hover {
+    background-color: rgb(243, 236, 236);
+  }
+  
+ p{
+   font-family: cursive;
+ }
+ h2{
+   color:#1a4853;
+   margin-top: 0%;
+   font-size: 50px;
+   font-family: cursive;
+   margin-bottom: 0%;
+}
+.btn-group button {
+    background-color:  rgb(152, 186, 189); /* Blue background */
+    border: 1px solid  rgb(152, 186, 189); /* Blue border */
+    color: rgb(10, 10, 10); 
+    padding: 10px 24px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+    font-family: cursive;
+  }
+  .buttons {
+   
+    border: 1px solid rgb(0, 0, 0); 
+    color: rgb(0, 0, 0); 
+    padding: 10px 24px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+    font-family: cursive;
+  }
+ 

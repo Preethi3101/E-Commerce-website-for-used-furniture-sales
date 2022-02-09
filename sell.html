@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="web_css.css">
+    <title>SELL PRODUCTS </title>
+    <style>
+     p{
+        margin-bottom:6px;
+    }
+    h1{
+        margin-top: 80px;
+        margin-right: 500px;
+    }
+    .check{
+        color:lightcoral;
+    }
+    form {
+        margin: 0 auto;
+        width: 950px;
+    }
+   center{
+     width:350px;
+   }
+   .subm{
+    margin: 0 auto;
+        width: 950px;
+   }
+   .value-button {
+  display: inline-block;
+  border: 1px solid #ddd;
+  margin: 0px;
+  width: 40px;
+  height: 20px;
+  text-align: center;
+  vertical-align: middle;
+  padding: 11px 0;
+  background: #eee;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.value-button:hover {
+  cursor: pointer;
+}
+
+form #decrease {
+  margin-right: -4px;
+  border-radius: 8px 0 0 8px;
+}
+
+form #increase {
+  margin-left: -4px;
+  border-radius: 0 8px 8px 0;
+}
+
+form #input-wrap {
+  margin: 0px;
+  padding: 0px;
+}
+
+input#number {
+  text-align: center;
+  border: none;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  margin: 0px;
+  width: 40px;
+  height: 40px;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+    </style>
+    <script>
+      function FORM_VALIDATION()
+      {
+        var sid = 
+              document.forms["RegForm"]["Id"];
+         
+          var name = 
+              document.forms["RegForm"]["Name"];
+         
+          var num = 
+              document.forms["RegForm"]["number"];
+          var email = 
+              document.forms["RegForm"]["Email"];
+          var pname = 
+              document.forms["RegForm"]["PName"];
+          var type  = 
+              document.forms["RegForm"]["Type"];
+         var desc  = 
+              document.forms["RegForm"]["Desc"];
+         var image  = 
+              document.forms["RegForm"]["Image"];
+         var count  = 
+              document.forms["RegForm"]["Count"];
+          var x  = 
+              document.forms["RegForm"]["x"];
+              if (sid.value == "") {
+              window.alert("Please enter your name.");
+              name.focus();
+              return false;
+          }
+
+          if (name.value == "") {
+              window.alert("Please enter your name.");
+              name.focus();
+              return false;
+          }
+          if (num.value == "") {
+              window.alert("Please enter your name.");
+              name.focus();
+              return false;
+          }
+         
+        
+        
+     
+          var mailformat = /^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,3})+$/;
+          if(email.value.match(mailformat))
+              {
+      
+              }
+              else
+              {
+                   alert("You have entered an invalid email address!");
+                  email.focus();
+                  return false;
+              }
+          
+          if (pname.value == "" )
+           {
+              window.alert("Please enter your password");
+              password2.focus();
+              return false;
+           }
+           if ( type.value =="")
+           {
+              window.alert("Please enter your password");
+              password.focus();
+              return false;
+           }
+           if ( desc.value =="")
+           {
+              window.alert("Please enter your password");
+              password.focus();
+              return false;
+           }
+           if ( count.value =="")
+           {
+              window.alert("Please enter your password");
+              password.focus();
+              return false;
+           }
+           
+          if(x.checked==false)
+          {
+              alert('Agree the terms and conditions');
+              return false;
+          }
+          alert('ADDED SUCCESSFULLY')
+                      
+           return true;
+      }
+      function fileValidation() {
+            var fileInput = 
+                document.getElementById('file');
+              
+            var filePath = fileInput.value;
+          
+            // Allowing file type
+            var allowedExtensions = 
+                    /(\.jpg|\.jpeg|\.png|\.gif)$/i;
+              
+            if (!allowedExtensions.exec(filePath)) {
+                alert('Invalid file type');
+                fileInput.value = '';
+                return false;
+            } 
+            else 
+            {
+              
+                // Image preview
+                if (fileInput.files && fileInput.files[0]) {
+                    var reader = new FileReader();
+                    reader.onload = function(e) {
+                        document.getElementById(
+                            'imagePreview').innerHTML = 
+                            '<img src="' + e.target.result
+                            + '"/>';
+                    };
+                      
+                    reader.readAsDataURL(fileInput.files[0]);
+                }
+            }
+        }
+
+        function increaseValue() {
+  var value = parseInt(document.getElementById('number').value, 10);
+  value = isNaN(value) ? 0 : value;
+  value++;
+  document.getElementById('number').value = value;
+}
+
+function decreaseValue() {
+  var value = parseInt(document.getElementById('number').value, 10);
+  value = isNaN(value) ? 0 : value;
+  value < 1 ? value = 1 : '';
+  value--;
+  document.getElementById('number').value = value;
+}
+  </script>
+</head>
+<body>
+    
+		
+    <h1 style="text-align: center;">Add Products Here!</h1>
+    <br>
+
+		<form  action="home.html" name="RegForm"  onsubmit="return FORM_VALIDATION()">
+	
+            <table width="700" border="0" align="center" cellpadding="0" cellspacing="5">
+                <tr>
+                    <td>Seller ID</td>
+                    <td><input name="Id" type="text" size="30" required></td>
+                    <td></td>
+                  </tr>
+                <tr>
+                 <tr>
+                    <td>Name </td>
+                    <td><input name="Name" type="text" size="30" required></td>
+                    <td></td>
+                  </tr>
+                <tr>    
+
+                <td>Email</td>
+                    <td><input name="Email" type="email" size="30" required></td>
+                    <td></td>
+                  </tr>
+
+                  <tr>
+                    <td>Phone Number</td>
+                    <td><input name="number" type="number" size="30" required></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Product Name </td>
+                    <td><input name="PName" type="text" size="30" required></td>
+                    <td></td>
+                  </tr>
+                <tr>
+                    <tr>
+                        <td> Type of Product </td>
+                        <td><select type="text" value="" name="Type">
+                        <option>COT</option>
+                        <option>SOFA</option>
+                        <option>DINING TABLE</option>
+                        <option>LANTERN</option>
+                        <option>DECOR</option></td>
+                        </select>
+                    </tr>
+                    <tr>
+                        <td>Description </td>
+                        <td><input name="Desc" type="text" size="30" required></td>
+                        <td></td>
+                      </tr>
+                    <tr>
+                        
+
+        
+        <tr>
+            <td>Upload Product Image </td>
+            <td><input name="Image" type="file" size="30" onchange="return fileValidation()" required></td>
+            <td></td>
+          </tr>
+                  <tr>
+                    <td>Product Available</td>
+                    <td> <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value">-</div>
+                    <input type="number" id="number" value="0" />
+                    <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value">+</div></td>
+                  </tr>
+                
+                  <tr>        
+                                     
+                    <td> <p class="check" ><input type="checkbox" name="x">
+                    Agree terms & conditions </p></td>
+                  
+                  </tr>
+                 
+                  <tr>
+                    
+                   
+           </table>  
+           <br>
+        
+           <center>
+            <p>
+            <input type="submit"  name="SUBMIT" />  
+           </p>
+          </center>
+  
+		
+
+
+		</form>
+
+</body>
+</html>
